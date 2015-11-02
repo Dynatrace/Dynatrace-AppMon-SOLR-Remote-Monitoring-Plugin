@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!-- plugin.xml file written by dynaTrace Client 6.1.0 -->
+<plugin>
+  <extension point="com.dynatrace.diagnostics.pdk.pluginconfig" id="com.dynatrace.diagnostics.plugin.solr" name="Solr Remote Plugin">
+    <information>
+      <category value="" />
+      <displayname value="Solr Remote Plugin" />
+      <description value="Gets metrics from Solr using the MBEANS Request Handler" />
+      <supportlevel value="unsupported" />
+    </information>
+    <configuration>
+      <property key="port" label="Port" type="string" description="SOLR Port (default 8983)" default="8983" multiline="false" />
+      <property key="handlers" label="Query Handlers" type="string" description="List of handlers (&quot;/select&quot;; &quot;/update&quot;) separated by semi-colons" default="/select;/update" multiline="false" />
+    </configuration>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitor" id="com.dynatrace.diagnostics.plugin.solr.monitor" name="SOLR Remote Monitor">
+    <plugin configid="com.dynatrace.diagnostics.plugin.solr" class="com.dynatrace.diagnostics.plugin.solr.SolrRemote" />
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.solr.metricgroup1" name="Cache Stats">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.solr.monitor">
+      <metric defaultrate="purepath" name="Query Result Cache Hit Ratio" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Query Result Cache Hit Ratio Cumulative" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Query Result Cache Size" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Document Cache Hit Ratio" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Document Cache Hit Ratio Cumulative" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Document Cache Size" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Field Value Cache Hit Ratio" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Field Value Cache Hit Ratio Cumulative" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Field Value Cache Size" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Filter Cache Hit Ratio" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Filter Cache Hit Ratio Cumulative" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Filter Cache Size" unit="bytes" description="My metric description ..." />
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.solr.metricgroup2" name="Core Stats">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.solr.monitor">
+      <metric defaultrate="purepath" name="Num Docs" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Max Docs" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Deleted Docs" unit="number" description="My metric description ..." />
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.solr.metricgroup3" name="Memory Stats">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.solr.monitor">
+      <metric defaultrate="purepath" name="JVM Memory Used" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="JVM Memory Free" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="JVM Memory Total" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Free Physical Memory Size" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Total Physical Memory Size" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Committed Virtual Memory Size" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Free Swap Space Size" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Total Swap Space Size" unit="bytes" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Open File Descriptor Count" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Max File Descriptor Count" unit="number" description="My metric description ..." />
+    </metricgroup>
+  </extension>
+  <extension point="com.dynatrace.diagnostics.pdk.monitormetricgroup" id="com.dynatrace.diagnostics.plugin.solr.metricgroup4" name="Query Stats">
+    <metricgroup monitorid="com.dynatrace.diagnostics.plugin.solr.monitor">
+      <metric defaultrate="purepath" name="Requests" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Errors" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Timeouts" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Avg Requests" unit="number" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Avg Time Per Request" unit="ms" description="My metric description ..." />
+      <metric defaultrate="purepath" name="Five Min Rate Requests" unit="number" description="My metric description ..." />
+    </metricgroup>
+  </extension>
+</plugin>
