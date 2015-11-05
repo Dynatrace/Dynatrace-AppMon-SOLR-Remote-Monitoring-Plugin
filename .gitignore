@@ -1,0 +1,4 @@
+*.project
+.classpath
+build/com.dynatrace.diagnostics.plugin.solr_1.0.0.jar
+*.class
