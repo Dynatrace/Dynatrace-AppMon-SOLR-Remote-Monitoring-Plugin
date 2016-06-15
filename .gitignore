@@ -1,4 +1,8 @@
-*.project
 .classpath
-build/com.dynatrace.diagnostics.plugin.solr_1.0.0.jar
+.project
+build/com.dynatrace.diagnostics.plugin.solr_*.jar
+com.dynatrace.diagnostics.sdk.jar
 *.class
+*localhost*.txt
+*.bak
+*.out*
