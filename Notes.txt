@@ -1,0 +1,14 @@
+v1.0.1 Changes - Dave Mauney
+============================
+1. Support for http/https protocols
+2. Support for "/dataimport" handler, and the following new metrics under the "Data Import Stats" metric group:
+	"Documents Added/Updated"
+	"Documents Deleted"
+	"Time Taken"
+	"Total Documents Processed"
+	"Total Documents Skipped"
+	"Total Requests made to DataSource"
+	"Total Rows Fetched"
+3. Support for new "Five Min Rate Requests Per Second" metric (no multiplication) as well as the original "Five Min Rate Requests" metric (with multiplication by 60)
+4. Refactored SolrRemote class to better handle nulls, unsubscribed measures, etc. and to report execptions in a more consistent manner
+5. Improved formatting/indentation

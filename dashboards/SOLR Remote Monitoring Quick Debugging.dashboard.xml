@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="6.3.0.1305" date="6/8/16 9:30 AM">
+  <dashboardconfig memento.version="6.3.0.1305" suppresssavewarning="false" created="2016-06-08T09:30:46-0400" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="dave.mauney" locationascomparesource="false" source="server://tag00944644099" sessionid="SOLRv63" opendrilldowninnewdashboard="false" groupname="" autoreplacesession="false" revision="00000155-3035-47a1-baac-561fee5120e3" locationassource="false" localizationenabled="false" name="SOLR Remote Monitoring Quick Debugging" authorname="dave.mauney" modified="2016-06-08T09:30:46-0400" id="c3e24773-3933-4570-a2c3-c1fe9cb9ff64">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="all" type="applications" />
+      <criterion showrendering="true" isactive="true" shownetwork="true" type="browserpathtype" showjavascript="true" />
+      <criterion pageenabled="false" timerenabled="false" type="browsersectionfilter">
+        <timername>
+          <stringmatchpattern match="contains" text="" />
+        </timername>
+        <pageurl>
+          <stringmatchpattern match="contains" text="" />
+        </pageurl>
+      </criterion>
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" type="incident" rulesmode="all" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion contenttypegroupsmode="all" showrendering="true" javascripttriggersmode="all" isactive="false" shownetwork="true" requestcriterion="ALL" type="riapurepathtype" showjavascript="true" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe type="Last 72h" />
+      </criterion>
+      <criterion type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+    <designconfig namefontsize="10" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="3ba2fad2-6c2e-4dbd-951d-f619f534d91d" folderid="folder" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://tag00944644099" sessionid="SOLRv63" usedashboardsource="true" folderid="folder" locationassource="false" addfilterinfo="false" name="Chart" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="3ba2fad2-6c2e-4dbd-951d-f619f534d91d">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="all" type="applications" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART" weights="1,1" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="true" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="-10.0" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="851fd1ae-330e-4b60-9c7d-ffd43cb1f3a3" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Errors" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="19" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Errors" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Errors" agenthost="" metrickeyid="Errors" keyid="Errors" metricgroupkey="Query Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(0,128,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="8d5ad18a-bb63-4dd8-b2d4-d69dd3dc809a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Five Min Rate Requests" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="17" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Five Min Rate Requests" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Five Min Rate Requests" agenthost="" metrickeyid="Five Min Rate Requests" keyid="Five Min Rate Requests" metricgroupkey="Query Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,64,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="97e74c19-72c1-46d2-ae2d-d5642f337326" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="JVM Memory Free" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="26" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="JVM Memory Free" agentname="New SOLR Remote Monitor" metricsimpledisplayname="JVM Memory Free" agenthost="" metrickeyid="JVM Memory Free" keyid="JVM Memory Free" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,0,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="a1527a41-cbf8-4ec0-aec4-68fea0a53baa" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Requests" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="14" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Requests" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Requests" agenthost="" metrickeyid="Requests" keyid="Requests" metricgroupkey="Query Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(128,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="a59b6faa-6d3a-47ee-aedc-a30b91cbec94" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Document Cache Hit Ratio Cumulative" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="23" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Document Cache Hit Ratio Cumulative" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Document Cache Hit Ratio Cumulative" agenthost="" metrickeyid="Document Cache Hit Ratio Cumulative" keyid="Document Cache Hit Ratio Cumulative" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(192,192,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="add0a56d-e43d-4026-b030-eeeffd86c25c" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="ms" name="Avg Time Per Request" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="15" uiunit="ms">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Avg Time Per Request" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Avg Time Per Request" agenthost="" metrickeyid="Avg Time Per Request" keyid="Avg Time Per Request" metricgroupkey="Query Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="ms" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,64,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="bfd226ab-f572-4e9e-93fd-8d07bd7c238b" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Filter Cache Hit Ratio" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="10" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Filter Cache Hit Ratio" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Filter Cache Hit Ratio" agenthost="" metrickeyid="Filter Cache Hit Ratio" keyid="Filter Cache Hit Ratio" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(192,64,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="c0f5fefd-962a-4060-a988-48515b360989" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="JVM Memory Total" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="20" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="JVM Memory Total" agentname="New SOLR Remote Monitor" metricsimpledisplayname="JVM Memory Total" agenthost="" metrickeyid="JVM Memory Total" keyid="JVM Memory Total" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(192,0,192,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="c367d5c5-7cc6-47bf-a661-7c37a14273a7" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Timeouts" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="21" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Timeouts" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Timeouts" agenthost="" metrickeyid="Timeouts" keyid="Timeouts" metricgroupkey="Query Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(192,64,192,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="d76b2957-6d90-4d20-9da3-c08a742915f1" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Total Physical Memory Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="31" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Total Physical Memory Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Total Physical Memory Size" agenthost="" metrickeyid="Total Physical Memory Size" keyid="Total Physical Memory Size" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(128,64,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="de624fec-472d-45bb-ab50-37ed1ac2cda8" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Deleted Docs" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="4" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Deleted Docs" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Deleted Docs" agenthost="" metrickeyid="Deleted Docs" keyid="Deleted Docs" metricgroupkey="Core Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,192,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="deb48820-b3bb-45a4-a651-6647e730e4e1" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Field Value Cache Hit Ratio" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="3" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Field Value Cache Hit Ratio" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Field Value Cache Hit Ratio" agenthost="" metrickeyid="Field Value Cache Hit Ratio" keyid="Field Value Cache Hit Ratio" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,0,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f37d04f1-9d3d-4ff8-b0f8-9d713ea74d56" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Avg Requests" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="27" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Avg Requests" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Avg Requests" agenthost="" metrickeyid="Avg Requests" keyid="Avg Requests" metricgroupkey="Query Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(192,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f5daccd4-4f99-4a01-84cd-09367ae528a6" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="JVM Memory Used" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="25" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="JVM Memory Used" agentname="New SOLR Remote Monitor" metricsimpledisplayname="JVM Memory Used" agenthost="" metrickeyid="JVM Memory Used" keyid="JVM Memory Used" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,0,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f6b70803-e058-4b19-a1d0-8235ad81318c" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Document Cache Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="12" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Document Cache Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Document Cache Size" agenthost="" metrickeyid="Document Cache Size" keyid="Document Cache Size" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(128,64,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="fb4c4f17-ed18-4875-b98c-c1d68dc73d4f" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Query Result Cache Hit Ratio Cumulative" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="16" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Query Result Cache Hit Ratio Cumulative" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Query Result Cache Hit Ratio Cumulative" agenthost="" metrickeyid="Query Result Cache Hit Ratio Cumulative" keyid="Query Result Cache Hit Ratio Cumulative" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(0,64,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="050048f0-3ae3-46c3-8bb9-b7276f1866cb" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Total Swap Space Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="13" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Total Swap Space Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Total Swap Space Size" agenthost="" metrickeyid="Total Swap Space Size" keyid="Total Swap Space Size" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(128,192,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="06aa014f-2b65-461d-932d-6a201f891665" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Max File Descriptor Count" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="30" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Max File Descriptor Count" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Max File Descriptor Count" agenthost="" metrickeyid="Max File Descriptor Count" keyid="Max File Descriptor Count" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,128,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="097fdc3b-3a20-4600-b145-f9add1c5171e" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Committed Virtual Memory Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="8" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Committed Virtual Memory Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Committed Virtual Memory Size" agenthost="" metrickeyid="Committed Virtual Memory Size" keyid="Committed Virtual Memory Size" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(0,192,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="1c0853e6-d327-42bb-848e-464ae21f5815" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Filter Cache Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="29" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Filter Cache Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Filter Cache Size" agenthost="" metrickeyid="Filter Cache Size" keyid="Filter Cache Size" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="2aa3e407-8a48-41e3-a791-7782c08ddd17" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Document Cache Hit Ratio" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Document Cache Hit Ratio" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Document Cache Hit Ratio" agenthost="" metrickeyid="Document Cache Hit Ratio" keyid="Document Cache Hit Ratio" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,64,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="2ee47183-decd-4350-9f7f-73e2ce2a649a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Max Docs" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="7" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Max Docs" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Max Docs" agenthost="" metrickeyid="Max Docs" keyid="Max Docs" metricgroupkey="Core Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,0,192,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="37c619fa-6de7-4868-a7b8-ae7666541a87" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Open File Descriptor Count" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="24" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Open File Descriptor Count" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Open File Descriptor Count" agenthost="" metrickeyid="Open File Descriptor Count" keyid="Open File Descriptor Count" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(192,64,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="3beaa03b-ca36-448e-9e34-28623574175a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Free Physical Memory Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="5" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Free Physical Memory Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Free Physical Memory Size" agenthost="" metrickeyid="Free Physical Memory Size" keyid="Free Physical Memory Size" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(0,64,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="4f02e07a-4130-4d08-84e4-b22ca4e9de57" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Free Swap Space Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="28" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Free Swap Space Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Free Swap Space Size" agenthost="" metrickeyid="Free Swap Space Size" keyid="Free Swap Space Size" metricgroupkey="Memory Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(0,128,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="522e2574-ce96-4078-8438-f55e2b5b4215" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Filter Cache Hit Ratio Cumulative" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="11" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Filter Cache Hit Ratio Cumulative" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Filter Cache Hit Ratio Cumulative" agenthost="" metrickeyid="Filter Cache Hit Ratio Cumulative" keyid="Filter Cache Hit Ratio Cumulative" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,128,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="5277efe1-e66c-4e8e-b6b9-6302857a6866" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Field Value Cache Hit Ratio Cumulative" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="6" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Field Value Cache Hit Ratio Cumulative" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Field Value Cache Hit Ratio Cumulative" agenthost="" metrickeyid="Field Value Cache Hit Ratio Cumulative" keyid="Field Value Cache Hit Ratio Cumulative" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(0,192,192,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="57adee80-59c4-4cc1-87f0-3de43715cb0d" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Num Docs" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="18" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Num Docs" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Num Docs" agenthost="" metrickeyid="Num Docs" keyid="Num Docs" metricgroupkey="Core Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(192,128,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="5d7e926f-8052-4695-a233-a3e3800aab94" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Field Value Cache Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="9" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Field Value Cache Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Field Value Cache Size" agenthost="" metrickeyid="Field Value Cache Size" keyid="Field Value Cache Size" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(64,128,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="5fea1ffa-441a-4755-a084-3c4721aa2e5a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="bytes" name="Query Result Cache Size" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="22" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Query Result Cache Size" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Query Result Cache Size" agenthost="" metrickeyid="Query Result Cache Size" keyid="Query Result Cache Size" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="bytes" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <chartsource systemid="SOLRv63" sourcecolor="RGB(0,128,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="SOLRv63" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="69fd906e-6253-491c-9b8e-c59af6c9c94a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="MonitorMeasure" fetchbaseline="false" unit="number" name="Query Result Cache Hit Ratio" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="SOLRv63" application="" parentkeyid="Query Result Cache Hit Ratio" agentname="New SOLR Remote Monitor" metricsimpledisplayname="Query Result Cache Hit Ratio" agenthost="" metrickeyid="Query Result Cache Hit Ratio" keyid="Query Result Cache Hit Ratio" metricgroupkey="Cache Stats" collector="" measuretype="MonitorMeasure" />
+            <displaysourceinfo measureunit="number" monitorscheduleid="New SOLR Remote Monitor" monitordetails="New SOLR Remote Monitor" measurerate="purepath" monitorhost="&lt;all-hosts&gt;" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>
