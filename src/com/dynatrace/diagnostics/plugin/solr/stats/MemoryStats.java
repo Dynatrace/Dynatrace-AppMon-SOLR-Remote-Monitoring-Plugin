@@ -27,9 +27,6 @@ public class MemoryStats {
 				this.setJvmMemoryUsed(jvmMBeansNode.path("used").asDouble());
 				this.setJvmMemoryFree(jvmMBeansNode.path("free").asDouble());
 				this.setJvmMemoryTotal(jvmMBeansNode.path("total").asDouble());
-
-			} else {
-				//LOG.error("Missing json node while retrieving jvm memory stats");
 			}
 
 			if (!memoryMBeansNode.isMissingNode()) {
@@ -40,8 +37,6 @@ public class MemoryStats {
 				this.setTotalSwapSpaceSize(memoryMBeansNode.path("totalSwapSpaceSize").asDouble());
 				this.setOpenFileDescriptorCount(memoryMBeansNode.path("openFileDescriptorCount").asDouble());
 				this.setMaxFileDescriptorCount(memoryMBeansNode.path("maxFileDescriptorCount").asDouble());
-			} else {
-				//LOG.error("Missing json node while retrieving system memory stats");
 			}
 		}
 	}

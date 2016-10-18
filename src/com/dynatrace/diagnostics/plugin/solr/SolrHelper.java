@@ -25,9 +25,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.google.common.base.Strings;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class SolrHelper {
 	private static final double BYTES_CONVERSION_FACTOR = 1024.0;
 	CloseableHttpClient httpClient = HttpClients.createDefault();
+
+	private static final Logger log = Logger.getLogger(SolrHelper.class.getName());
 
 	public SolrHelper(CloseableHttpClient httpClient) {
 		this.httpClient = httpClient;
@@ -64,6 +69,60 @@ public class SolrHelper {
 			}
 		}
 		return solrStatsMap;
+	}
+
+	public Map<String, JsonNode> getDataImportStatusMap(String core, String dataImportUri) throws IOException {
+		String uri = String.format(dataImportUri, core);
+		InputStream inputStream = null;
+		Map<String, JsonNode> dataImportStatusMap = new HashMap<String, JsonNode>();
+		try {
+			HttpGet request = new HttpGet(uri);
+			HttpResponse response = httpClient.execute(request);
+			inputStream = response.getEntity().getContent();
+			
+			JsonNode jsonNode = getJsonNode(inputStream);
+			if (jsonNode != null) {
+				JsonNode statusMessagesNode = jsonNode.path("statusMessages");
+				if (statusMessagesNode.isMissingNode()) {
+					throw new IllegalArgumentException("Missing node while parsing statusMessages node json string for " + core + uri);
+				}
+				String name = "Total Requests made to DataSource";
+				if (statusMessagesNode.has(name)) {
+					dataImportStatusMap.put(name, statusMessagesNode.get(name));
+				}
+				name = "Total Rows Fetched";
+				if (statusMessagesNode.has(name)) {
+					dataImportStatusMap.put(name, statusMessagesNode.get(name));
+				}
+				name = "Total Documents Processed";
+				if (statusMessagesNode.has(name)) {
+					dataImportStatusMap.put(name, statusMessagesNode.get(name));
+				}
+				name = "Total Documents Skipped";
+				if (statusMessagesNode.has(name)) {
+					dataImportStatusMap.put(name, statusMessagesNode.get(name));
+				}
+				name = "Time taken";
+				if (statusMessagesNode.has(name)) {
+					dataImportStatusMap.put(name, statusMessagesNode.get(name));
+				}
+				name = "";
+				if (statusMessagesNode.has(name)) {
+					dataImportStatusMap.put(name, statusMessagesNode.get(name));
+				}
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		} finally {
+			try {
+				if (inputStream != null) {
+					inputStream.close();
+				}
+			} catch (Exception e) {
+				// Ignore
+			}
+		}
+		return dataImportStatusMap;
 	}
 
 	public List<String> getCores(String uri) {
@@ -172,6 +231,7 @@ public class SolrHelper {
 			Locale loc = Locale.getDefault();
 			return Double.valueOf(NumberFormat.getInstance(loc).parse(valueStr).doubleValue());
 		} catch (ParseException e) {
+			// Ignore
 		}
 		return null;
 	}

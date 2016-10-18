@@ -27,7 +27,6 @@ public class CacheStats {
 	private Double filterCacheSize;
 
 	public void populateStats(Map<String, JsonNode> solrMBeansHandlersMap) throws Exception {
-
 		JsonNode cacheNode = solrMBeansHandlersMap.get("CACHE");
 		JsonNode queryResultCacheStats = cacheNode.path("queryResultCache").path("stats");
 
@@ -35,10 +34,6 @@ public class CacheStats {
 			this.setQueryResultCacheHitRatio(SolrHelper.multipyBy(queryResultCacheStats.path("hitratio").asDouble(), PERCENT_MULTIPLIER));
 			this.setQueryResultCacheHitRatioCumulative(SolrHelper.multipyBy(queryResultCacheStats.path("cumulative_hitratio").asDouble(), PERCENT_MULTIPLIER));
 			this.setQueryResultCacheSize(queryResultCacheStats.path("size").asDouble());
-
-
-		} else {
-			
 		}
 
 		JsonNode documentCacheStats = cacheNode.path("documentCache").path("stats");
@@ -47,8 +42,6 @@ public class CacheStats {
 			this.setDocumentCacheHitRatio(SolrHelper.multipyBy(documentCacheStats.path("hitratio").asDouble(), PERCENT_MULTIPLIER));
 			this.setDocumentCacheHitRatioCumulative(SolrHelper.multipyBy(documentCacheStats.path("cumulative_hitratio").asDouble(), PERCENT_MULTIPLIER));
 			this.setDocumentCacheSize(documentCacheStats.path("size").asDouble());
-		} else {
-			//LOG.error("documentCache is disabled in solrconfig.xml");
 		}
 
 		JsonNode fieldValueCacheStats = cacheNode.path("fieldValueCache").path("stats");
@@ -57,8 +50,6 @@ public class CacheStats {
 			this.setFieldValueCacheHitRatio(SolrHelper.multipyBy(fieldValueCacheStats.path("hitratio").asDouble(), PERCENT_MULTIPLIER));
 			this.setFieldValueCacheHitRatioCumulative(SolrHelper.multipyBy(fieldValueCacheStats.path("cumulative_hitratio").asDouble(), PERCENT_MULTIPLIER));
 			this.setFieldValueCacheSize(fieldValueCacheStats.path("size").asDouble());
-		} else {
-			//LOG.error("fieldValueCache is disabled in solrconfig.xml");
 		}
 
 		JsonNode filterCacheStats = cacheNode.path("filterCache").path("stats");
@@ -67,8 +58,6 @@ public class CacheStats {
 			this.setFilterCacheHitRatio(SolrHelper.multipyBy(filterCacheStats.path("hitratio").asDouble(), PERCENT_MULTIPLIER));
 			this.setFilterCacheHitRatioCumulative(SolrHelper.multipyBy(filterCacheStats.path("cumulative_hitratio").asDouble(), PERCENT_MULTIPLIER));
 			this.setFilterCacheSize(filterCacheStats.path("size").asDouble());
-		} else {
-			//LOG.error("filterCache is disabled in solrconfig.xml");
 		}
 	}
 
